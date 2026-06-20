@@ -1,13 +1,13 @@
 # OTTER RISC-V MCU
 
-A 32-bit RV32I RISC-V multicycle processor implemented in SystemVerilog and deployed on a Digilent Basys3 FPGA board. This project was completed as part of CPE 233 (Computer Design and Assembly Language Programming) and focuses on CPU datapath design, control logic, and hardware verification.
+A 32-bit RV32I RISC-V processor implemented in SystemVerilog and deployed on a Digilent Basys3 FPGA board. This project was completed as part of CPE 233 (Computer Design and Assembly Language Programming) and focuses on CPU datapath design, control logic, and hardware verification.
 
 ## Overview
 
-The processor implements the RV32I instruction set using a multicycle datapath architecture consisting of a program counter, register file, ALU, immediate generator, branch address generation, branch condition generation, and an FSM-based control unit.
-The design was integrated, simulated, and tested using custom SystemVerilog modules and testbenches before deployment to FPGA hardware.
+The processor implements the RV32I instruction set using a modular datapath architecture consisting of a program counter, register file, ALU, immediate generator, branch address generation, branch condition generation, and an FSM-based control unit. The design was integrated, simulated, and tested using custom SystemVerilog modules and testbenches before deployment to FPGA hardware.
 
 ## Architecture
+The diagram below illustrates the processor datapath, control unit, branch execution logic, writeback path, and dual-port memory interface.
 
 ![OTTER MCU Architecture](architecture.png)
 
@@ -77,16 +77,34 @@ Verification included:
 
 ## FPGA Deployment
 
-The design was synthesized and deployed on a Digilent Basys3 FPGA development board. Processor functionality was validated using both provided OTTER memory images and custom test programs executed directly on hardware.
-Features demonstrated on hardware include:
+The design was synthesized and deployed on a Digilent Basys3 FPGA development board. Functionality was validated using both provided OTTER memory images and custom test programs executed directly on hardware.
+
+Demonstrated features include:
 
 * Program execution
 * Memory-mapped I/O
 * Seven-segment display output
 * User interaction through FPGA peripherals
 
-## Author
+## Contributors
 
-Eric Liu
+This project was completed as a two-person team project for CPE 233.
+- Eric Liu
+- Joseph Dotado
 
-https://www.linkedin.com/in/eric-cliu/
+## My Contributions
+
+I implemented and integrated the following modules:
+
+* ALU (`ALU`)
+* Register File (`REG_FILE`)
+* Program Counter Management (`PCM`)
+* Immediate Generator (`IMMED_GEN`)
+* Instruction Decoder (`cu_dcdr`)
+* Top-level processor integration (`OTTERMCU`)
+* Verification testbench (`OTTERMCU_tb`)
+* BCD conversion logic
+
+I was also responsible for integrating all processor modules, debugging system-level issues, creating and running test programs, verifying functionality in simulation, and deploying the design to a Basys3 FPGA.
+
+The Control FSM (`cu_fsm`), Branch Address Generator, and Branch Condition Generator were implemented by my project partner and integrated into the final processor design.
