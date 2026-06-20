@@ -1,16 +1,15 @@
 # OTTER RISC-V MCU
 
-A 32-bit RISC-V microcontroller implemented in SystemVerilog and deployed on a Digilent Basys3 FPGA board. This project was completed as part of CPE 233 (Computer Design and Assembly Language Programming) and focuses on CPU datapath design, control logic, and hardware verification.
+A 32-bit RV32I RISC-V multicycle processor implemented in SystemVerilog and deployed on a Digilent Basys3 FPGA board. This project was completed as part of CPE 233 (Computer Design and Assembly Language Programming) and focuses on CPU datapath design, control logic, and hardware verification.
 
 ## Overview
 
-The processor implements core RISC-V functionality through a modular architecture consisting of a program counter, register file, arithmetic logic unit (ALU), branch logic, immediate generation, and an FSM-based control unit.
-
+The processor implements the RV32I instruction set using a multicycle datapath architecture consisting of a program counter, register file, ALU, immediate generator, branch address generation, branch condition generation, and an FSM-based control unit.
 The design was integrated, simulated, and tested using custom SystemVerilog modules and testbenches before deployment to FPGA hardware.
 
 ## Architecture
 
-![OTTER MCU Architecture](docs/architecture.png)
+![OTTER MCU Architecture](architecture.png)
 
 The processor datapath includes:
 
@@ -22,8 +21,8 @@ The processor datapath includes:
 * Branch Condition Generator
 * Control Unit Decoder
 * Control Unit Finite State Machine (FSM)
-* Memory Interface
-* Memory-Mapped I/O Support
+* Dual-Port Memory Interface
+* Memory-Mapped I/O Interface
 
 ## Implemented Components
 
@@ -57,14 +56,12 @@ The following files were provided as course infrastructure and integrated into t
 
 The processor supports key RISC-V datapath operations including:
 
-* Arithmetic instructions
-* Logical instructions
-* Register-to-register operations
-* Immediate operations
-* Conditional branching
-* Jump instructions
-* Memory access operations
-* Memory-mapped I/O
+* RV32I arithmetic and logical instructions
+* Register-register and immediate operations
+* Conditional branch instructions
+* JAL and JALR control-flow operations
+* Load and store instructions
+* Memory-mapped I/O access
 
 ## Verification
 
@@ -80,8 +77,7 @@ Verification included:
 
 ## FPGA Deployment
 
-The design was synthesized and deployed on a Digilent Basys3 FPGA development board.
-
+The design was synthesized and deployed on a Digilent Basys3 FPGA development board. Processor functionality was validated using both provided OTTER memory images and custom test programs executed directly on hardware.
 Features demonstrated on hardware include:
 
 * Program execution
