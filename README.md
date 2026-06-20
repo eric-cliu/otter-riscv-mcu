@@ -94,17 +94,9 @@ This project was completed as a two-person team project for CPE 233.
 
 ## My Contributions
 
-I implemented and integrated the following modules:
+As part of a two-person team, I implemented and integrated major components of the OTTER RV32I processor in SystemVerilog, including the ALU, register file, program counter logic, immediate generator, instruction decoder, top-level processor integration, and verification testbench.
 
-* ALU (`ALU`)
-* Register File (`REG_FILE`)
-* Program Counter Management (`PCM`)
-* Immediate Generator (`IMMED_GEN`)
-* Instruction Decoder (`cu_dcdr`)
-* Top-level processor integration (`OTTERMCU`)
-* Verification testbench (`OTTERMCU_tb`)
-* BCD conversion logic
+I was responsible for system integration, debugging, simulation-based verification, FPGA deployment, and hardware validation on a Digilent Basys3 board. I also developed custom memory files to test instruction execution and control flow on hardware.
 
-I was also responsible for integrating all processor modules, debugging system-level issues, creating and running test programs, verifying functionality in simulation, and deploying the design to a Basys3 FPGA.
+Additional processor modules, including branch execution and control logic, were developed independently by both team members, with selected implementations integrated into the final design.
 
-The Control FSM (`cu_fsm`), Branch Address Generator, and Branch Condition Generator were implemented by my project partner and integrated into the final processor design.
