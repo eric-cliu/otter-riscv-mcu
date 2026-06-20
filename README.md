@@ -85,21 +85,8 @@ Features demonstrated on hardware include:
 * Seven-segment display output
 * User interaction through FPGA peripherals
 
-## Skills Demonstrated
-
-* SystemVerilog
-* FPGA Design
-* RISC-V Architecture
-* Computer Architecture
-* Digital Logic Design
-* RTL Design
-* Hardware Verification
-* Finite State Machine Design
-* Datapath Integration
-* Vivado
-
 ## Author
 
 Eric Liu
 
-Computer Engineering — California Polytechnic State University
+https://www.linkedin.com/in/eric-cliu/
